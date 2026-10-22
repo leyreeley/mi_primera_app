@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_primera_app/contador.dart';
 import 'package:mi_primera_app/widget_saludar.dart';
 
 void main() {
@@ -59,11 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -94,24 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
+            const Spacer(),
             Text(
               "Hola mundo mi primera app!",
               style: TextStyle(
@@ -120,13 +102,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontSize: 24.0,
               ),
             ),
-            const Text('Tú has pulsado el botón este número de veces:'),
+            /*const Text('Tú has pulsado el botón este número de veces:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            ),*/
             Text(
-              "Estoy debajo del botón",
+              "Estoy arriba del saludo",
               style: TextStyle(
                 color: Colors.greenAccent,
                 fontSize: 18.0,
@@ -134,29 +116,16 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             WidgetSaludar(nombre: 'Michi'),
-          ],
-        ),
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // Empuja los botones hacia los extremos
-          children: [
-            FloatingActionButton(
-              onPressed: _decrementCounter,
-              tooltip: 'Decrement',
-              child: const Icon(Icons.remove),
-            ),
-            FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
+            // Meto la clase Contador dentro de un Expanded.
+            // Esto hace que ocupe todo el espacio que sobra en la pantalla
+            // permitiendo que los botones se vayan hasta abajo del todo.
+            Expanded(
+              child: Contador(),
             ),
           ],
         ),
       ),
-      floatingActionButtonLocation: .centerFloat, //necesario para que los botones queden iguales respecto al margen
+
     );
   }
 }
