@@ -15,21 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.green),
       ),
       home: const MyHomePage(title: 'DAM 2 PMDM'),
@@ -39,15 +24,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -72,21 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       //Estructura de la pantalla
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Center(
@@ -100,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold,
                 color: Colors.pink,
                 fontSize: 24.0,
+                overflow: TextOverflow.ellipsis //para q ponga puntos suspensivos si el texto no entra
               ),
             ),
             /*const Text('Tú has pulsado el botón este número de veces:'),
@@ -107,6 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),*/
+            Row(mainAxisAlignment: MainAxisAlignment.center,children: [
+              GestureDetector(child: Icon(Icons.star, size: 40, color: Colors.amber,), onTap: () {print('1 estrella');}),
+              GestureDetector(child: Icon(Icons.star, size: 40, color: Colors.amber,), onTap: () {print('2 estrellas');}),
+              GestureDetector(child: Icon(Icons.star, size: 40, color: Colors.amber,), onTap: () {print('3 estrellas');}),
+              GestureDetector(child: Icon(Icons.star, size: 40, color: Colors.amber,), onTap: () {print('4 estrellas');}),
+              GestureDetector(child: Icon(Icons.star, size: 40, color: Colors.amber,), onTap: () {print('5 estrellas');})
+            ],),
             Text(
               "Estoy arriba del saludo",
               style: TextStyle(
@@ -119,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Meto la clase Contador dentro de un Expanded.
             // Esto hace que ocupe todo el espacio que sobra en la pantalla
             // permitiendo que los botones se vayan hasta abajo del todo.
+            Image.asset("assets/emoji.jpg", width: 200, height: 200,),  //hay q añadirlo en el pubspec.yaml
             Expanded(
               child: Contador(),
             ),
