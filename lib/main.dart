@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_primera_app/FichaPersonaje.dart';
 import 'package:mi_primera_app/Listaspage.dart';
 import 'package:mi_primera_app/contador.dart';
 import 'package:mi_primera_app/widget_incrementarTama%C3%B1o.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.green)),
-      home: const Listaspage(title: "Página 2"),    //Aqui va MyHomePage(title: 'DAM 2 PMDM') cuando quiero mostrar esta página
+      home: const Fichapersonaje(title: "Página 3"),    //Aqui va MyHomePage(title: 'DAM 2 PMDM') cuando quiero mostrar esta página
     );
   }
 }
