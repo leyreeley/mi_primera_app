@@ -39,7 +39,8 @@ class _IncrementarTamanioState extends State<IncrementarTamanio> {
             ),
             //añado un sizedBox pa dar un poco de espacio entre medias
             const SizedBox(width: 10),
-            ElevatedButton(
+
+            OutlinedButton(
                 onPressed: _decrementarTamanio,
                 child: const Icon(Icons.remove))
           ]

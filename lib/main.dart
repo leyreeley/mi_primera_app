@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_primera_app/Listaspage.dart';
 import 'package:mi_primera_app/contador.dart';
 import 'package:mi_primera_app/widget_incrementarTama%C3%B1o.dart';
 import 'package:mi_primera_app/widget_saludar.dart';
@@ -10,13 +11,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.green)),
-      home: const MyHomePage(title: 'DAM 2 PMDM'),
+      home: const Listaspage(title: "Página 2"),    //Aqui va MyHomePage(title: 'DAM 2 PMDM') cuando quiero mostrar esta página
     );
   }
 }
@@ -44,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            const SizedBox(height: 10,),
             Text(
               "Hola mundo mi primera app!",
               style: TextStyle(
@@ -64,31 +65,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 GestureDetector(
                   child: Icon(Icons.star, size: 40, color: Colors.amber),
                   onTap: () {
-                    print('1 estrella');
+                    debugPrint('1 estrella');
                   },
                 ),
                 GestureDetector(
                   child: Icon(Icons.star, size: 40, color: Colors.amber),
                   onTap: () {
-                    print('2 estrellas');
+                    debugPrint('2 estrellas');
                   },
                 ),
                 GestureDetector(
                   child: Icon(Icons.star, size: 40, color: Colors.amber),
                   onTap: () {
-                    print('3 estrellas');
+                    debugPrint('3 estrellas');
                   },
                 ),
                 GestureDetector(
                   child: Icon(Icons.star, size: 40, color: Colors.amber),
                   onTap: () {
-                    print('4 estrellas');
+                    debugPrint('4 estrellas');
                   },
                 ),
                 GestureDetector(
                   child: Icon(Icons.star, size: 40, color: Colors.amber),
                   onTap: () {
-                    print('5 estrellas');
+                    debugPrint('5 estrellas');
                   },
                 ),
               ],
@@ -108,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // permitiendo que los botones se vayan hasta abajo del todo.
             Image.asset("assets/emoji.jpg", width: 200, height: 200),
             //hay q añadirlo en el pubspec.yaml
+            //Ejercicio 2 bloque 2
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -143,6 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             IncrementarTamanio(),
+            Divider(), //Es una linea separadora
             Expanded(child: Contador()),
           ],
         ),
