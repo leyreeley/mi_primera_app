@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WidgetSaludar extends StatelessWidget {
-  const WidgetSaludar({super.key, required this.nombre});
+class Saludar extends StatelessWidget {
+  const Saludar({super.key, required this.nombre});
   final String nombre;
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mi_primera_app/contador.dart';
+import 'package:mi_primera_app/widget_incrementarTama%C3%B1o.dart';
 import 'package:mi_primera_app/widget_saludar.dart';
 
 void main() {
@@ -30,19 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            const Spacer(),
             Text(
               "Hola mundo mi primera app!",
               style: TextStyle(
@@ -115,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: TextDecoration.underline,
               ),
             ),
-            WidgetSaludar(nombre: 'Michi'),
+            Saludar(nombre: 'Michi'),
             // Meto la clase Contador dentro de un Expanded.
             // Esto hace que ocupe todo el espacio que sobra en la pantalla
             // permitiendo que los botones se vayan hasta abajo del todo.
@@ -155,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            IncrementarTamanio(),
             Expanded(child: Contador()),
           ],
         ),
